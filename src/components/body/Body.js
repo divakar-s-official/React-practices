@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import { API_URL } from '../../utils/constants'
+import ShimmerUI from './ShimmerUI'
 
 
 const Body = () => {
@@ -21,8 +22,10 @@ const Body = () => {
     //optional chaining
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
+  
+  //conditional rendering
   if(listOfRestaurants.length === 0) {
-    return <h1>Loading...</h1>
+    return <ShimmerUI />
   }
   
   
