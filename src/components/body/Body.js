@@ -23,15 +23,12 @@ const Body = () => {
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
   
-  //conditional rendering
-  if(listOfRestaurants.length === 0) {
-    return <ShimmerUI />
-  }
+
   
   
     
   console.log('body rendered');
-  return (
+  return listOfRestaurants===0 ? <ShimmerUI /> : (
     <div className='body'>
     <div className='px-10 mt-5 mb-4'>
       <button className='p-2 bg-gray-300 rounded-lg cursor-pointer' 
