@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import { API_URL } from '../../utils/constants'
 import ShimmerUI from './ShimmerUI'
+import { Link } from 'react-router-dom'
 
 
 const Body = () => {
@@ -57,7 +58,11 @@ const Body = () => {
     </div>   
     <div className='flex flex-wrap justify-start px-8 '>
         {filteredListOfRestaurants.map((restaurants)=>(
-            <RestaurantCard  resdata={restaurants.info} key={restaurants.info.name}/>
+            <Link 
+            key={restaurants.info.id} 
+            to={"/restaurants/" + restaurants.info.id} >
+              <RestaurantCard  resdata={restaurants.info}/>
+            </Link>
         ))}
         
     </div>

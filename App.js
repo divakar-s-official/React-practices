@@ -6,6 +6,7 @@ import About from './src/components/About'
 import Contact from './src/components/Contact'
 import Cart from './src/components/Cart'
 import Error from './src/components/Error'
+import RestaurantMenu from './src/components/body/RestaurantMenu'
 
 const App = () =>{
     
@@ -38,6 +39,10 @@ const AppRouter = createBrowserRouter([
                 path: "/cart",
                 element: <Cart />
             },
+            {
+                path: "/restaurants/:resId", //  /:resId  this part of code is dynamic according to the id of the restaurant
+                element: <RestaurantMenu />
+            }
             
         ],
         errorElement : <Error />
