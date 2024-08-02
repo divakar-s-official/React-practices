@@ -13,9 +13,11 @@ const Body = () => {
   
 
   useEffect(()=>{
+    
     fetchData();
   },[])
 
+  
   const fetchData = async() => {
     const data = await fetch(API_URL);
     const json = await data.json();
@@ -24,14 +26,12 @@ const Body = () => {
     //optional chaining
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    
   }
   
-
   
-  
-    
-  
-  return listOfRestaurants.length ===0 ? (<ShimmerUI />) : (
+  if (listOfRestaurants.length === 0) return <ShimmerUI />;
+  return (
     <div className='body'>
     <div className='flex gap-2 px-10 mt-5 mb-4'>
       <div>
@@ -49,9 +49,9 @@ const Body = () => {
       
       <button className='p-2 bg-gray-300 rounded-lg cursor-pointer' 
         onClick={()=> {
-          const filteredRestaurants = listOfRestaurants.filter((restaurant)=>restaurant.info.avgRatingString >= 4.5)
+          const filteredRestaurant = listOfRestaurants.filter((restaurant)=>restaurant.info.avgRatingString >= 4.5)
           //whenever my state variable changes react re-render a component
-          setListOfRestaurants(filteredRestaurants)
+          setFilteredListOfRestaurants(filteredRestaurant)
         }}
       >Top Rated Restaurants</button>
     </div>   

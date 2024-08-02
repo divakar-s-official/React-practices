@@ -9,3 +9,11 @@ useEffect();
   			console.log('useEffect called');
 		},[])
 		- if you have to do something after rendering a compponent 
+		-the first argument is the callback fn()
+		-second is the dependency array
+
+
+two types of routing in webApps
+	-client side
+	-server side 
+	
