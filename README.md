@@ -33,3 +33,9 @@ two types of routing in webApps
 	-if you have multiple things in your component you should have break it in to different component
 
 	MODULARITY = you breakdown your code into different different small modules.so that your codebecomes more maintanable and more testable
+
+
+CUSTOM HOOKS:
+ - WE CAN USE THESE CUSTOM HOOKS MAKE OUR CODE MORE MODULAR
+ - TO ABSTRACT THE RESPONSIBILITY,EXTRA RESPONSIBILTIIES FORM THESE COMPONENTS TO A DIFFERENT HOOK
+ - HOOKS ARE LIKE JUST A UTILITY FUNCTIONS
