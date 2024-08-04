@@ -4,6 +4,7 @@ import RestaurantCard from './RestaurantCard'
 import ShimmerUI from './ShimmerUI'
 import { Link } from 'react-router-dom'
 import useRestaurantList from '../../utils/customhooks/useRestaurantList'
+import useOnlineStatus from '../../utils/customhooks/useOnlineStatus'
 
 
 const Body = () => {
@@ -14,7 +15,10 @@ const Body = () => {
     searchText,
     setSearchText} = useRestaurantList(); //custom hook
   
-  
+  const onlineStatus = useOnlineStatus();//custom hook
+  if(onlineStatus === false){
+    return <h1 className='mt-10 font-bold text-center '>Looks like you are offline Please Check your Internet Connection</h1> //condition for online status
+  } 
   if (listOfRestaurants.length === 0) return <ShimmerUI />;
   return (
     <div className='body'>

@@ -35,7 +35,6 @@ const useRestaurantList = () => {
     }
         return {
             listOfRestaurants,
-            setListOfRestaurants,
             filteredListOfRestaurants,
             setFilteredListOfRestaurants,
             searchText,
