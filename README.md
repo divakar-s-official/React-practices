@@ -3,7 +3,7 @@ state variable:
       - whenever my state variable changes react rerender/ refresh  my component.
       - suppose when i click button as soon as i change my state variable react auttomatically refresh my fast automatically.
       - It keeps your data layer and sync with the UI layer		
-
+____________________________________________________________________________________________________
 useEffect();
 		useEffect(()=> {
   			console.log('useEffect called');
@@ -11,12 +11,12 @@ useEffect();
 		- if you have to do something after rendering a compponent 
 		-the first argument is the callback fn()
 		-second is the dependency array
-
+____________________________________________________________________________________________________
 
 two types of routing in webApps
 	-client side
 	-server side 
-
+----------------------------------------------------------------------------------------------------
 
 	SINGLE RESPONSIBILITY PRINCIPLE
 
@@ -33,9 +33,28 @@ two types of routing in webApps
 	-if you have multiple things in your component you should have break it in to different component
 
 	MODULARITY = you breakdown your code into different different small modules.so that your codebecomes more maintanable and more testable
-
+----------------------------------------------------------------------------------------------------
 
 CUSTOM HOOKS:
  - WE CAN USE THESE CUSTOM HOOKS MAKE OUR CODE MORE MODULAR
  - TO ABSTRACT THE RESPONSIBILITY,EXTRA RESPONSIBILTIIES FORM THESE COMPONENTS TO A DIFFERENT HOOK
  - HOOKS ARE LIKE JUST A UTILITY FUNCTIONS
+----------------------------------------------------------------------------------------------------
+LAZY LOADING (OPTIMIZING THE PERFORMANCE EVEN MORE)
+Example 
+	const About = lazy(()=>import('./src/components/About.js'))
+		<Suspense fallback={Loading...}><About /></Suspense>
+
+
+		is also known as 
+			CHUNKING 
+			CODE SPLITTING
+			LAZY LOADING
+			DYNAMIC BUNDLING
+
+	if you have all components in one js file the size of the file is very big
+	so you to break down your application in to smaller smaller pieces
+
+____________________________________________________________________________________________________
+
+
