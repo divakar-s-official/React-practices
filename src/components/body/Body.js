@@ -1,5 +1,5 @@
 
-import RestaurantCard from './RestaurantCard'
+import RestaurantCard, { withPromotedLabel } from './RestaurantCard'
 
 import ShimmerUI from './ShimmerUI'
 import { Link } from 'react-router-dom'
@@ -14,6 +14,8 @@ const Body = () => {
     setFilteredListOfRestaurants,
     searchText,
     setSearchText} = useRestaurantList(); //custom hook
+
+  const OpenedRestaurantStatus = withPromotedLabel(RestaurantCard)
   
   const onlineStatus = useOnlineStatus();//custom hook
   if(onlineStatus === false){
@@ -49,7 +51,9 @@ const Body = () => {
             <Link 
             key={restaurants.info.id} 
             to={"/restaurants/" + restaurants.info.id} >
+              {restaurants.info.isOpen ? <OpenedRestaurantStatus resdata={restaurants.info}/> :
               <RestaurantCard  resdata={restaurants.info}/>
+              }
             </Link>
         ))}
         
