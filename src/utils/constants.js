@@ -6,6 +6,7 @@ export const CDN_LOGO = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_
 
 export const API_URL = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.0168445&lng=76.9558321&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
 
-export const MENU_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&restaurantId="
+export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.0168445&lng=76.9558321&restaurantId="
 
 export const GITHUB_API = "https://api.github.com/users/divakar-s-official"
+

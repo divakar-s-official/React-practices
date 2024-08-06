@@ -1,5 +1,5 @@
 
-import RestaurantCard, { withPromotedLabel } from './RestaurantCard'
+import RestaurantCard, { withPromotedLabel1 } from './RestaurantCard'
 
 import ShimmerUI from './ShimmerUI'
 import { Link } from 'react-router-dom'
@@ -14,10 +14,10 @@ const Body = () => {
     setFilteredListOfRestaurants,
     searchText,
     setSearchText} = useRestaurantList(); //custom hook
-
-  const OpenedRestaurantStatus = withPromotedLabel(RestaurantCard)
   
   const onlineStatus = useOnlineStatus();//custom hook
+
+  const OpenRestaurantStatus = withPromotedLabel1(RestaurantCard);
   if(onlineStatus === false){
     return <h1 className='mt-10 font-bold text-center '>Looks like you are offline Please Check your Internet Connection</h1> //condition for online status
   } 
@@ -51,9 +51,8 @@ const Body = () => {
             <Link 
             key={restaurants.info.id} 
             to={"/restaurants/" + restaurants.info.id} >
-              {restaurants.info.isOpen ? <OpenedRestaurantStatus resdata={restaurants.info}/> :
-              <RestaurantCard  resdata={restaurants.info}/>
-              }
+              {restaurants.info.isOpen ? <OpenRestaurantStatus resdata={restaurants.info}/>:
+              <RestaurantCard  resdata={restaurants.info}/>}
             </Link>
         ))}
         

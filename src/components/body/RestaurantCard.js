@@ -4,7 +4,7 @@ import { CDN_LOGO } from '../../utils/constants'
 const RestaurantCard = ({resdata}) => {
   
   return (
-    <div className=''>
+    
         <div className='p-2 w-60 h-76 hover:bg-gray-200 rounded-xl'>
             <div>
                 <img className='object-cover w-full rounded-lg h-36' src={CDN_LOGO + resdata.cloudinaryImageId} alt='res-logo' />
@@ -21,18 +21,34 @@ const RestaurantCard = ({resdata}) => {
             
             
     </div>
-    </div>
+    
   )
 }
 
-export const withPromotedLabel = (RestaurantCard) => {
-  return(props) => {
-    return (
-      <>
-        <label className='absolute p-2 m-2 font-thin text-white bg-black rounded-lg'>Open</label>
+// Higher order Component 
+// export const withPromotedLabel = (RestaurantCard) => {
+//   return(props) => {
+//     return (
+//       <>
+//         <label className='absolute p-2 m-2 font-bold text-white bg-black bg-opacity-80 rounded-xl'>Open</label>
+//         <RestaurantCard {...props}/>
+//       </>
+//     )
+//   }
+// }
+
+
+export function withPromotedLabel1(RestaurantCard){
+  return function(props){
+    return(
+      <div>
+        <label className='absolute p-2 m-2 font-bold text-white bg-black bg-opacity-80 rounded-xl'>Open</label>
         <RestaurantCard {...props}/>
-      </>
+      </div>
     )
   }
 }
+
 export default RestaurantCard
+
+

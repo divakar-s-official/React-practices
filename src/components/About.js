@@ -16,7 +16,7 @@ class About extends Component{
   render(){
     console.log("parent render")
     return (
-      <div className='p-5'>
+      <div className='p-5 mt-20'>
         <UserClass name="first"/>
         <UserClass name="second"/>
         
