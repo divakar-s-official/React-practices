@@ -58,3 +58,11 @@ Example
 ____________________________________________________________________________________________________
 
 
+# Redux Toolkit
+ # INSTALL @redux/toolkit
+ # INSTALL react-redux
+ # connect our store to our app
+ # slice (cartSlice)
+ # dispatch(action)
+ # reducer function()
+ # selector (subscribe to our store)

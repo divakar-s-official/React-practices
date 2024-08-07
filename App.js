@@ -10,6 +10,8 @@ import Cart from './src/components/Cart'
 import Error from './src/components/Error'
 import RestaurantMenu from './src/components/body/RestaurantMenu'
 import Grocery from './src/components/Grocery'
+import { Provider } from 'react-redux'
+import appStore from './src/components/reduxStore/appStore'
 
 // import About from './src/components/About'
 const About = lazy(()=>import('./src/components/About'));
@@ -18,11 +20,13 @@ const Grocery = lazy(()=>import('./src/components/Grocery'))
 const App = () =>{
     
     return (
+        <Provider store={appStore}> 
         <div className='App'>
             <Header />
             
             <Outlet />
         </div>
+        </Provider>
     )
 }
 const AppRouter = createBrowserRouter([
