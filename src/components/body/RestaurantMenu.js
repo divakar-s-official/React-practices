@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     
     const resInfo = useRestaurantMenu(resId); //custom hook  makes our code much cleaner
     
-    const [showIndex,setShowIndex] = useState()
+    const [showIndex,setShowIndex] = useState(); //managing state =  parent level for all accordion restaurant category
     if(resInfo === null) return <ShimmerUI />
     const {name,cuisines,costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
